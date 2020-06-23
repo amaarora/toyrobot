@@ -2,7 +2,7 @@
   "toyrobot": {
     "Overview": "/",
     "Direction ": "/direction",
-    "Robot": "/robot",
+    "Title": "/robot",
     "Main": "/main"
   }
 }

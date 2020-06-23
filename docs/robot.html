@@ -1,6 +1,6 @@
 ---
 
-title: Robot
+title: Title
 
 keywords: fastai
 sidebar: home_sidebar
@@ -34,6 +34,41 @@ sidebar: home_sidebar
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ToyRobot">ToyRobot<a class="anchor-link" href="#ToyRobot"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <a href="/toyrobot/robot#ToyRobot"><code>ToyRobot</code></a> class is the robot the does the moving. This class contains the main methods <code>left</code>, <code>right</code>, <code>move</code>, <code>report</code> and a <a href="https://docs.python.org/3/library/functions.html#classmethod">classmethod</a> <code>from_placement</code> which can be used to instantiate the robot without calling <code>__init__</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The sense of direction inside the ToyRobot comes from the <a href="/toyrobot/direction#Direction"><code>Direction</code></a> class itself. If we want the robot to move left, we simply update it's facing direction or <code>self.f</code> by calling <code>self.f.left()</code>.</p>
+<p>Because <code>self.f</code> is an instance of <a href="/toyrobot/direction#Direction"><code>Direction</code></a>, the actual turning of left and right is already taken care of.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The robot does the moving based on the direction it is current in:</p>
+<ul>
+<li>To move the robot North, it updates it's <code>y</code> by <code>y+1</code> and keeps <code>x</code> as same.</li>
+<li>To move the robot West, it updates it's <code>x</code> by <code>x-1</code> and keeps <code>y</code> as same. </li>
+<li>To move the robot East, it updates it's <code>x</code> by <code>x+1</code> and keeps <code>y</code> as same. </li>
+<li>To move the robot South, it updates it's <code>y</code> by <code>y-1</code> and keeps <code>x</code> as same. </li>
+</ul>
+<p>The internal working of movement is taken care of by using the <code>sin</code> and <code>cos</code> math functions.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -54,6 +89,7 @@ sidebar: home_sidebar
 <div class="output_markdown rendered_html output_subarea ">
 <h2 id="ToyRobot" class="doc_header"><code>class</code> <code>ToyRobot</code><a href="https://github.com/amaarora/toyrobot/tree/master/toyrobot/robot.py#L11" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ToyRobot</code>(<strong><code>x</code></strong>, <strong><code>y</code></strong>, <strong><code>idx</code></strong>=<em><code>None</code></em>, <strong><code>th</code></strong>=<em><code>5</code></em>, <strong><code>tw</code></strong>=<em><code>5</code></em>)</p>
 </blockquote>
+<p>The actual ToyRobot class the does the moving.</p>
 
 </div>
 
@@ -65,6 +101,19 @@ sidebar: home_sidebar
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Table">Table<a class="anchor-link" href="#Table"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A basic <a href="/toyrobot/robot#Table"><code>Table</code></a> class that checks if the <a href="/toyrobot/robot"><code>robot</code></a> or a tuple of (x, y) is inside the Table. This is done by creating a <code>__contains__</code> method.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -83,7 +132,7 @@ sidebar: home_sidebar
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Table" class="doc_header"><code>class</code> <code>Table</code><a href="https://github.com/amaarora/toyrobot/tree/master/toyrobot/robot.py#L42" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Table</code>(<strong><code>h</code></strong>=<em><code>5</code></em>, <strong><code>w</code></strong>=<em><code>5</code></em>)</p>
+<h2 id="Table" class="doc_header"><code>class</code> <code>Table</code><a href="https://github.com/amaarora/toyrobot/tree/master/toyrobot/robot.py#L51" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Table</code>(<strong><code>h</code></strong>=<em><code>5</code></em>, <strong><code>w</code></strong>=<em><code>5</code></em>)</p>
 </blockquote>
 
 </div>
@@ -103,7 +152,117 @@ sidebar: home_sidebar
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="k">import</span> <span class="o">*</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#example use by passing tuple</span>
+<span class="k">assert</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="ow">in</span> <span class="n">Table</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">assert</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="ow">in</span> <span class="n">Table</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">assert</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Table</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tests">Tests<a class="anchor-link" href="#Tests"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Some basic tests to make sure that the <code>Robot</code> and <a href="/toyrobot/robot#Table"><code>Table</code></a> work together.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># instantiate robot on (2,2) facing `North`</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="n">ToyRobot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">r1</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="n">Direction</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">r1</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="k">assert</span> <span class="n">r1</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="k">assert</span> <span class="n">r1</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">get_idx</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="c1"># take one step forward in the current direction (North)</span>
+<span class="n">r1</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">r1</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="k">assert</span> <span class="n">r1</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="mi">3</span>
+
+<span class="c1"># change direction to right (East) and take one step forward</span>
+<span class="n">r1</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+<span class="n">r1</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">r1</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="k">assert</span> <span class="n">r1</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="mi">3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create a new robot by using the `from_placement` method </span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">ToyRobot</span><span class="o">.</span><span class="n">from_placement</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="n">ToyRobot</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">r2</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">get_idx</span><span class="p">()</span><span class="o">==</span><span class="mi">0</span>
+<span class="k">assert</span> <span class="n">r2</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="k">assert</span> <span class="n">r2</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># simple checks to make sure that robot is either inside or outside the table</span>
+<span class="k">assert</span> <span class="n">ToyRobot</span><span class="o">.</span><span class="n">from_placement</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">in</span> <span class="n">Table</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">ToyRobot</span><span class="o">.</span><span class="n">from_placement</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">in</span> <span class="n">Table</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">ToyRobot</span><span class="o">.</span><span class="n">from_placement</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">in</span> <span class="n">Table</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">ToyRobot</span><span class="o">.</span><span class="n">from_placement</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">in</span> <span class="n">Table</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">ToyRobot</span><span class="o">.</span><span class="n">from_placement</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">in</span> <span class="n">Table</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="kn">import</span> <span class="o">*</span> 
 <span class="n">notebook2script</span><span class="p">()</span>
 </pre></div>
 

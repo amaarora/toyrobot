@@ -9,6 +9,7 @@ from numpy import sin, cos, pi
 
 # Cell
 class ToyRobot:
+    "The actual ToyRobot class the does the moving."
     def __init__(self, x, y, idx=None, th=5, tw=5):
         self.f = Direction(idx=idx)
         self.x = x
@@ -18,15 +19,23 @@ class ToyRobot:
     def __repr__(self):
         return f"{self.__class__.__name__}, located at ({self.x}, {self.y}) and facing {self.f}!"
 
-    def report(self): print(self)
+    def report(self):
+        "report the current (X,Y) coordinates and direction."
+        print(self)
 
     def left(self):
+        "update direction anticlockwise."
         self.f = self.f.left()
 
     def right(self):
+        "update direction clockwise."
         self.f = self.f.right()
 
     def move(self):
+        """
+        get curent direction, take a step in the direction and only update the X and Y coords
+        if the new position is inside the table.
+        """
         idx = self.f.get_idx()
         new_x = self.x + (sin(idx*(pi/2)).astype(int))
         new_y = self.y + (cos(idx*(pi/2)).astype(int))

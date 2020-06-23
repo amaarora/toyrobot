@@ -3,7 +3,6 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"Direction": "01_direction.ipynb",
-         "d": "01_direction.ipynb",
          "ToyRobot": "02_robot.ipynb",
          "Table": "02_robot.ipynb",
          "get_direction_idx": "03_main.ipynb",

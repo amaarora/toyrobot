@@ -47,6 +47,13 @@ description: "A cyclic direction class to make rotations easier."
 <div class="output_markdown rendered_html output_subarea ">
 <h2 id="Direction" class="doc_header"><code>class</code> <code>Direction</code><a href="https://github.com/amaarora/toyrobot/tree/master/toyrobot/direction.py#L6" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Direction</code>(<strong><code>directions</code></strong>=<em><code>['NORTH', 'EAST', 'SOUTH', 'WEST']</code></em>, <strong><code>idx</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
+<p>A cyclic direction class to make rotation easier.</p>
+<p>The directions are written in a specific order of North, East, South, West
+instead of North, South, East, West to make rotation simpler.</p>
+<p>To rotate the direction clockwise, this class simply updates the <code>idx</code> to <code>idx+1</code>.
+To rotate the direction clockwise, this class simply updates the <code>idx</code> to <code>idx-1</code>.</p>
+<p>Returns:
+    An instance of itself with the updated direction on calling either <code>left</code> or <code>right</code>.</p>
 
 </div>
 
@@ -54,6 +61,13 @@ description: "A cyclic direction class to make rotations easier."
 
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -79,8 +93,7 @@ description: "A cyclic direction class to make rotations easier."
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Converted 00_core.ipynb.
-Converted 01_direction.ipynb.
+<pre>Converted 01_direction.ipynb.
 Converted 02_robot.ipynb.
 Converted 03_main.ipynb.
 Converted index.ipynb.

@@ -10,10 +10,13 @@ import re
 
 # Cell
 def get_direction_idx(direction, directions=['NORTH', 'SOUTH', 'EAST', 'WEST']):
+    "returns the index of direction passed as input from `directions`."
     return directions.index(direction.upper())
 
 # Cell
 def run():
+    "main function to run the package from command line."
+
     parser = ArgumentParser()
     parser.add_argument(
         '-path',
@@ -23,11 +26,16 @@ def run():
     )
     args = parser.parse_args()
     robot = None
-    f = open('./example1.txt', 'r')
 
-    # make robot dance
+    # open text file passed as arg
+    f = open(args.cmd_file_path, 'r')
+
+    # read line by line and execute commands based on constraints in `problem.md`
     for line in f.readlines():
+
+        # remove any extra whitespace and commas to get command
         args = re.findall(r'[^,\s]+', line)
+
         if args[0]=='PLACE' and robot is None:
             robot = ToyRobot.from_placement(int(args[1]), int(args[2]), get_direction_idx(args[3]))
         elif robot is not None and args[0] != 'PLACE':

@@ -14,12 +14,12 @@ class Direction:
     def get_idx(self):
         return self.directions.index(self.f)
 
-    def LEFT(self):
+    def left(self):
         idx = self.get_idx()
         new_idx = idx-1 if idx>=1 else self.max_idx
         return self.__class__(idx=new_idx)
 
-    def RIGHT(self):
+    def right(self):
         idx = self.get_idx()
         new_idx = idx+1 if idx<=2 else 0
         return self.__class__(idx=new_idx)

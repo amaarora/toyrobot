@@ -4,7 +4,8 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"test": "00_core.ipynb",
          "Direction": "01_direction.ipynb",
-         "ToyRobot": "02_robot.ipynb"}
+         "ToyRobot": "02_robot.ipynb",
+         "Table": "02_robot.ipynb"}
 
 modules = ["core.py",
            "direction.py",

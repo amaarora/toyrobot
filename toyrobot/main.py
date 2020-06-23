@@ -16,9 +16,10 @@ def get_direction_idx(direction, directions=['NORTH', 'SOUTH', 'EAST', 'WEST']):
 def run():
     parser = ArgumentParser()
     parser.add_argument(
+        '-path',
         '--cmd_file_path',
         required=True,
-        help="absolute path to the file containing commands for the ToyRobot."
+        help="absolute path to the `.txt` file containing commands for the ToyRobot."
     )
     args = parser.parse_args()
     robot = None

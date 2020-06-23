@@ -7,7 +7,7 @@ index = {"test": "00_core.ipynb",
          "ToyRobot": "02_robot.ipynb",
          "Table": "02_robot.ipynb",
          "get_direction_idx": "03_main.ipynb",
-         "main": "03_main.ipynb"}
+         "run": "03_main.ipynb"}
 
 modules = ["core.py",
            "direction.py",

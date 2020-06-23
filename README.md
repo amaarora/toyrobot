@@ -5,5 +5,3 @@
 ## Install
 
 `pip install toyrobot`
-
-## How to use

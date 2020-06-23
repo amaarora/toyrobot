@@ -13,7 +13,7 @@ entries:
       title: module name here
       url: /core
     - output: web,pdf
-      title: 'Robot '
+      title: 'Direction '
       url: /direction
     - output: web,pdf
       title: Title

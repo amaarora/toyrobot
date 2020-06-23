@@ -16,23 +16,23 @@ class ToyRobot:
         self.table = Table(th, tw)
 
     def __repr__(self):
-        return f"{self.__class__.__name__}, currently at ({self.x}, {self.y}) and facing {self.f}!"
+        return f"{self.__class__.__name__}, located at ({self.x}, {self.y}) and facing {self.f}!"
 
     def report(self): print(self)
 
     def left(self):
         self.f = self.f.left()
-        print(f"{self.__class__.__name__} facing new direction: {self.f}")
 
     def right(self):
         self.f = self.f.right()
-        print(f"{self.__class__.__name__} facing new direction: {self.f}")
 
     def move(self):
         idx = self.f.get_idx()
-        self.x = self.x + (sin(idx*(pi/2)).astype(int))
-        self.y = self.y + (cos(idx*(pi/2)).astype(int))
-        print(f"New position on table: {self.x, self.y}")
+        new_x = self.x + (sin(idx*(pi/2)).astype(int))
+        new_y = self.y + (cos(idx*(pi/2)).astype(int))
+        if (new_x, new_y) in self.table:
+            self.x = new_x
+            self.y = new_y
 
     @classmethod
     def from_placement(cls, x, y, idx):
@@ -40,9 +40,12 @@ class ToyRobot:
 
 # Cell
 class Table:
-    def __init__(self, h, w):
+    def __init__(self, h=5, w=5):
         self.h = h
         self.w = w
 
-    def __contains__(self, robot: ToyRobot):
-        return min(self.h, self.w) >= max(robot.x, robot.y)
+    def __contains__(self, o):
+        if isinstance(o, ToyRobot):
+            return min(self.h, self.w) >= max(o.x, o.y)
+        else:
+            return min(self.h, self.w) >= max(o[0], o[1])

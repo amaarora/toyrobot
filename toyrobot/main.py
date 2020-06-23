@@ -32,5 +32,3 @@ def run():
         elif robot is not None and args[0] != 'PLACE':
             cmd = f"robot.{args[0].lower()}()"
             exec(cmd)
-
-    robot.report()

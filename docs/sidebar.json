@@ -1,7 +1,6 @@
 {
   "toyrobot": {
     "Overview": "/",
-    "module name here": "/core",
     "Direction ": "/direction",
     "Robot": "/robot",
     "Main": "/main"

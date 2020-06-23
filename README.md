@@ -8,6 +8,4 @@
 
 ## Documentation
 
-```python
-amarora.github.io
-```
+For documentation, refer [here](https://amaarora.github.io/toyrobot/).

@@ -17,14 +17,13 @@ To run the project in command line,
 python main.py --cmd_file_path <path_to_txt_file>
 ```
 
-As an example: 
+As an example:
 
-```python
-!python main.py --cmd_file_path ./example1.txt 
+`python main.py --cmd_file_path ./example1.txt`
+
 ```
-
-    ToyRobot facing new direction: WEST
-    ToyRobot facing new direction: NORTH
-    New position on table: (0, 1)
-    ToyRobot, currently at (0, 1) and facing NORTH!
-
+ToyRobot facing new direction: WEST
+ToyRobot facing new direction: NORTH
+New position on table: (0, 1)
+ToyRobot, currently at (0, 1) and facing NORTH!
+```

@@ -24,7 +24,7 @@ class ToyRobot:
         return f"{self.__class__.__name__} facing new direction: {self.f}"
 
     def move(self):
-        idx = self.f.get_curr_dir()
+        idx = self.f.get_idx()
         self.x = self.x + (sin(idx*(pi/2)).astype(int))
         self.y = self.y + (cos(idx*(pi/2)).astype(int))
         return f"New position on table: {self.x, self.y}"

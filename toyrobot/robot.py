@@ -22,17 +22,17 @@ class ToyRobot:
 
     def left(self):
         self.f = self.f.left()
-        return f"{self.__class__.__name__} facing new direction: {self.f}"
+        print(f"{self.__class__.__name__} facing new direction: {self.f}")
 
     def right(self):
         self.f = self.f.right()
-        return f"{self.__class__.__name__} facing new direction: {self.f}"
+        print(f"{self.__class__.__name__} facing new direction: {self.f}")
 
     def move(self):
         idx = self.f.get_idx()
         self.x = self.x + (sin(idx*(pi/2)).astype(int))
         self.y = self.y + (cos(idx*(pi/2)).astype(int))
-        return f"New position on table: {self.x, self.y}"
+        print(f"New position on table: {self.x, self.y}")
 
     @classmethod
     def from_placement(cls, x, y, idx):

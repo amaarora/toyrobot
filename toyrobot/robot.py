@@ -11,16 +11,16 @@ class Direction:
         self.max_idx = len(directions)-1
         self.f = self.directions[idx]
 
-    def get_curr_f(self):
+    def get_curr_dir(self):
         return self.directions.index(self.f)
 
     def LEFT(self):
-        idx = self.get_curr_f()
+        idx = self.get_curr_dir()
         new_idx = idx-1 if idx>=1 else self.max_idx
         return self.__class__(idx=new_idx)
 
     def RIGHT(self):
-        idx = self.get_curr_f()
+        idx = self.get_curr_dir()
         new_idx = idx+1 if idx<=2 else 0
         return self.__class__(idx=new_idx)
 
@@ -29,10 +29,11 @@ class Direction:
 
 # Cell
 class ToyRobot:
-    def __init__(self, x, y):
-        self.f = Direction()
+    def __init__(self, x, y, idx=None):
+        self.f = Direction(idx=idx)
         self.x = x
         self.y = y
+        self.step = 1
 
     def __repr__(self):
         return f"{self.__class__.__name__}, currently at ({self.x}, {self.y}) and facing {self.f}!"
@@ -46,3 +47,9 @@ class ToyRobot:
     def RIGHT(self):
         self.f = self.f.RIGHT()
         return f"{self.__class__.__name__} facing new direction: {self.f}"
+
+    def move(self):
+        idx = self.f.get_curr_dir()
+        self.x = self.x + (sin(idx*(pi/2)).astype(int))
+        self.y = self.y + (cos(idx*(pi/2)).astype(int))
+        return f"New position on table: {self.x, self.y}"

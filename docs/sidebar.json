@@ -3,7 +3,7 @@
     "Overview": "/",
     "module name here": "/core",
     "Direction ": "/direction",
-    "Title": "/robot",
+    "Robot": "/robot",
     "Main": "/main"
   }
 }

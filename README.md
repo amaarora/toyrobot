@@ -4,4 +4,4 @@
 
 ## Install
 
-`pip install toyrobot`
+`pip install -e .`

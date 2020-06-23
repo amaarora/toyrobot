@@ -34,6 +34,3 @@ def run():
             exec(cmd)
 
     robot.report()
-
-if name == '__main__':
-    main()

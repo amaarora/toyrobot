@@ -13,7 +13,7 @@ entries:
       title: 'Direction '
       url: /direction
     - output: web,pdf
-      title: The `Robot` that must'nt fall from the `Table`
+      title: Title
       url: /robot
     - output: web,pdf
       title: Main

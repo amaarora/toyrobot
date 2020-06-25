@@ -17,7 +17,7 @@ To run the project in command line (after installation):
 `toyrobot_run --cmd_file_path <path_to_example.txt>`
 
 As an example: 
-`toyrobot_run --cmd_file_path ./example1.txt`
+`toyrobot_run --cmd_file_path ./examples/example1.txt`
 
 ```
 ToyRobot, located at (4, 5) and facing WEST!

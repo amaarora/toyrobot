@@ -2,7 +2,7 @@
   "toyrobot": {
     "Overview": "/",
     "Direction ": "/direction",
-    "The `Robot` that must'nt fall from the `Table`": "/robot",
+    "Title": "/robot",
     "Main": "/main"
   }
 }

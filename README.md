@@ -22,3 +22,9 @@ As an example:
 ```
 ToyRobot, located at (4, 5) and facing WEST!
 ```
+
+## Tests
+
+To run unit tests:
+
+`nbdev_test_nbs`

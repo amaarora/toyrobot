@@ -13,7 +13,7 @@ entries:
       title: 'Direction '
       url: /direction
     - output: web,pdf
-      title: Title
+      title: '`ToyRobot` and `Table`'
       url: /robot
     - output: web,pdf
       title: '`ToyRobot` Runner'

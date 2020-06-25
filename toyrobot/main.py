@@ -27,7 +27,7 @@ def run():
     args = parser.parse_args()
     robot = None
 
-    # open text file passed as arg
+    # open text file from path passed as arg
     f = open(args.cmd_file_path, 'r')
 
     # read line by line and execute commands based on constraints in `problem.md`

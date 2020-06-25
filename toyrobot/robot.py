@@ -45,7 +45,9 @@ class ToyRobot:
 
     @classmethod
     def from_placement(cls, x, y, idx):
-        return cls(x, y, idx=idx)
+        "place a robot if it's inside the table and ignore otherwise"
+        if max(x,y)<=5:
+            return cls(x, y, idx=idx)
 
 # Cell
 class Table:

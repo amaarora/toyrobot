@@ -16,7 +16,7 @@ entries:
       title: Title
       url: /robot
     - output: web,pdf
-      title: Main
+      title: '`ToyRobot` Runner'
       url: /main
     output: web
     title: toyrobot

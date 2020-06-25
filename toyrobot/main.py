@@ -9,7 +9,7 @@ from argparse import ArgumentParser
 import re
 
 # Cell
-def get_direction_idx(direction, directions=['NORTH', 'SOUTH', 'EAST', 'WEST']):
+def get_direction_idx(direction, directions=['NORTH', 'EAST', 'SOUTH', 'WEST']):
     "returns the index of direction passed as input from `directions`."
     return directions.index(direction.upper())
 

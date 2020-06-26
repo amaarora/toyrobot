@@ -10,11 +10,12 @@ from numpy import sin, cos, pi
 # Cell
 class ToyRobot:
     "The actual ToyRobot class the does the moving."
-    def __init__(self, x, y, idx=None, th=5, tw=5):
+    def __init__(self, x, y, idx=None, th=5, tw=5, verbose=False):
         self.f = Direction(idx=idx)
         self.x = x
         self.y = y
         self.table = Table(th, tw)
+        self.verbose = verbose
 
     def report(self):
         "report the current (X,Y) coordinates and direction."
@@ -23,10 +24,12 @@ class ToyRobot:
     def left(self):
         "update direction anticlockwise."
         self.f = self.f.left()
+        if self.verbose: self.report()
 
     def right(self):
         "update direction clockwise."
         self.f = self.f.right()
+        if self.verbose: self.report()
 
     def move(self):
         """
@@ -39,12 +42,13 @@ class ToyRobot:
         if (new_x, new_y) in self.table:
             self.x = new_x
             self.y = new_y
+        if self.verbose: self.report()
 
     @classmethod
-    def from_placement(cls, x, y, idx):
+    def from_placement(cls, x, y, idx, verbose=False):
         "place a robot if it's inside the table and ignore otherwise"
         if max(x,y)<=5:
-            return cls(x, y, idx=idx)
+            return cls(x, y, idx=idx, verbose=verbose)
 
 # Cell
 class Table:

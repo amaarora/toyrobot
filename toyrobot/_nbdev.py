@@ -5,6 +5,7 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 index = {"Direction": "01_direction.ipynb",
          "ToyRobot": "02_robot.ipynb",
          "Table": "02_robot.ipynb",
+         "COMMANDS": "03_main.ipynb",
          "get_direction_idx": "03_main.ipynb",
          "parse_args": "03_main.ipynb",
          "Runner": "03_main.ipynb",

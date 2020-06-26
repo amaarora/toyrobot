@@ -16,12 +16,9 @@ class ToyRobot:
         self.y = y
         self.table = Table(th, tw)
 
-    def __repr__(self):
-        return f"{self.__class__.__name__}, located at ({self.x}, {self.y}) and facing {self.f}!"
-
     def report(self):
         "report the current (X,Y) coordinates and direction."
-        print(self)
+        print(f"{self.x},{self.y},{self.f}")
 
     def left(self):
         "update direction anticlockwise."

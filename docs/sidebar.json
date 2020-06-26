@@ -3,6 +3,7 @@
     "Overview": "/",
     "Direction ": "/direction",
     "ToyRobot and Table": "/robot",
-    "Runner": "/main"
+    "Runner": "/main",
+    "Test": "/tests"
   }
 }

@@ -18,6 +18,9 @@ entries:
     - output: web,pdf
       title: Runner
       url: /main
+    - output: web,pdf
+      title: Test
+      url: /tests
     output: web
     title: toyrobot
   output: web

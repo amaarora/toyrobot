@@ -6,11 +6,16 @@ index = {"Direction": "01_direction.ipynb",
          "ToyRobot": "02_robot.ipynb",
          "Table": "02_robot.ipynb",
          "get_direction_idx": "03_main.ipynb",
-         "run": "03_main.ipynb"}
+         "parse_args": "03_main.ipynb",
+         "Runner": "03_main.ipynb",
+         "run": "03_main.ipynb",
+         "test_eq": "04_tests.ipynb",
+         "test_stdout": "04_tests.ipynb"}
 
 modules = ["direction.py",
            "robot.py",
-           "main.py"]
+           "main.py",
+           "test.py"]
 
 doc_url = "https://amaarora.github.io/toyrobot/"
 

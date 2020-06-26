@@ -25,6 +25,6 @@ ToyRobot, located at (4, 5) and facing WEST!
 
 ## Tests
 
-To run unit tests:
+To run unit as well as integration tests:
 
 `nbdev_test_nbs`

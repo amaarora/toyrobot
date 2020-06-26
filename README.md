@@ -20,7 +20,7 @@ As an example:
 `toyrobot_run --cmd_file_path ./examples/example1.txt`
 
 ```
-ToyRobot, located at (4, 5) and facing WEST!
+4,5,WEST
 ```
 
 ## Tests

@@ -28,6 +28,35 @@ def parse_args():
 
 # Cell
 class Runner:
+    """
+    This class takes care of the constraints for `ToyRobot` and also calls the required commands
+    for the `ToyRobot` to do the actual moving, change direction and report.
+
+    It can be considered to be a regular function with a state `self.robot`.
+
+    It can be called just as a function passing in a list of args or nothing at all.
+    If no args are passed, then the [ArgumentParser](https://docs.python.org/3/library/argparse.html#argparse.ArgumentParser)
+    is run to get arguments from the command line. Otherwise, for testing some args can
+    also be passed.
+
+    This function reads the text file line by line, removes comma and whitespace and splits the
+    string command to get actual arguments. Then based on these arguments the actual commands on
+    `ToyRobot` are called.
+
+    If 'PLACE' command is seen, then a new robot is created and assigned to self.robot if
+    it is a valid 'PLACE' command.
+
+    A valid command is one that places the `ToyRobot` inside the `Table`.
+
+    Otherwise, if the command is not valid then no `ToyRobot` is instantiated and all other commands
+    are ignored until a valid 'PLACE' command is seen.
+
+    If there are two 'PLACE' commands inside the .txt file, then
+    - both will run if they are both valid.
+    - only valid command will run if one is valid.
+    - no robot will be created if both are invalid.
+    """
+
     def __init__(self):
         self.robot = None
 

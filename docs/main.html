@@ -118,6 +118,27 @@ description: "Main runner function to make things work in cmd line"
 <div class="output_markdown rendered_html output_subarea ">
 <h2 id="Runner" class="doc_header"><code>class</code> <code>Runner</code><a href="https://github.com/amaarora/toyrobot/tree/master/toyrobot/main.py#L30" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Runner</code>()</p>
 </blockquote>
+<p>This class takes care of the constraints for <a href="/toyrobot/robot#ToyRobot"><code>ToyRobot</code></a> and also calls the required commands
+for the <a href="/toyrobot/robot#ToyRobot"><code>ToyRobot</code></a> to do the actual moving, change direction and report.</p>
+<p>It can be considered to be a regular function with a state <code>self.robot</code>.</p>
+<p>It can be called just as a function passing in a list of args or nothing at all.
+If no args are passed, then the <a href="https://docs.python.org/3/library/argparse.html#argparse.ArgumentParser">ArgumentParser</a>
+is run to get arguments from the command line. Otherwise, for testing some args can
+also be passed.</p>
+<p>This function reads the text file line by line, removes comma and whitespace and splits the
+string command to get actual arguments. Then based on these arguments the actual commands on
+<a href="/toyrobot/robot#ToyRobot"><code>ToyRobot</code></a> are called.</p>
+<p>If 'PLACE' command is seen, then a new robot is created and assigned to self.robot if
+it is a valid 'PLACE' command.</p>
+<p>A valid command is one that places the <a href="/toyrobot/robot#ToyRobot"><code>ToyRobot</code></a> inside the <a href="/toyrobot/robot#Table"><code>Table</code></a>.</p>
+<p>Otherwise, if the command is not valid then no <a href="/toyrobot/robot#ToyRobot"><code>ToyRobot</code></a> is instantiated and all other commands
+are ignored until a valid 'PLACE' command is seen.</p>
+<p>If there are two 'PLACE' commands inside the .txt file, then</p>
+<ul>
+<li>both will run if they are both valid.</li>
+<li>only valid command will run if one is valid.</li>
+<li>no robot will be created if both are invalid.</li>
+</ul>
 
 </div>
 

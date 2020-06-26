@@ -23,6 +23,8 @@ As an example:
 4,5,WEST
 ```
 
+To print out outputs after every command add `-- verbose` flag to the command.
+
 ## Tests
 
 To run unit as well as integration tests:

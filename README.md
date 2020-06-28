@@ -2,6 +2,8 @@
 > A toy robot, toy application where the toy robot doesn't fall off the toy table
 
 
+This project was built using [nbdev](https://github.com/fastai/nbdev) :)
+
 ## Install
 
 `pip install toyrobot`

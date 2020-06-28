@@ -45,8 +45,11 @@ class ToyRobot:
         if self.verbose: self.report()
 
     @classmethod
-    def from_placement(cls, x, y, idx, verbose=False):
+    def from_placement(cls, x:int, y:int, idx:int, verbose=False):
         "place a robot if it's inside the table and ignore otherwise"
+        if not (isinstance(x, int) and isinstance(y, int)):
+            raise ValueError(f"only integer values are acceptable for `x`, `y` coordinates.")
+
         if max(x,y)<=5:
             return cls(x, y, idx=idx, verbose=verbose)
 

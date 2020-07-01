@@ -10,7 +10,7 @@ from contextlib import redirect_stdout
 # Cell
 def test_eq(a, b):
     "test a equals b"
-    assert a==b, f"test failed, {a} not equal to {b}"
+    assert a!=b, f"test failed, {a} not equal to {b}"
 
 # Cell
 def test_stdout(f, args, exp):

@@ -23,4 +23,4 @@ jobs:
       run: |	
         nbdev_test_nbs
     - name: Docker Image	
-        run: |	docker build --pull --file Dockerfile .
+      run: |	docker build .
